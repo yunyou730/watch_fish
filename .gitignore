@@ -1,0 +1,9 @@
+xlua_v2.1.15/
+xLua-master/
+xlua_v2.1.15.zip
+xLua-master.zip
+*.cs
+*.cache
+watch_fish_client/Logs/
+watch_fish_client/Library/
+watch_fish_client/Temp/

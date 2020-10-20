@@ -1,0 +1,6 @@
+print("This is launcher.lua.txt")
+
+require "main"
+
+
+
