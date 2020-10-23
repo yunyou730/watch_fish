@@ -8,3 +8,4 @@ watch_fish_client/Logs/
 watch_fish_client/Library/
 watch_fish_client/Temp/
 watch_fish_client/.idea/
+win32_build/

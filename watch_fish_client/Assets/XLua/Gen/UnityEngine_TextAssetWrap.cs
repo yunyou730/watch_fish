@@ -17,7 +17,7 @@ namespace XLua.CSObjectWrap
     using Utils = XLua.Utils;
     public class UnityEngineTextAssetWrap 
     {
-        public static void __Register(RealStatePtr L)	
+        public static void __Register(RealStatePtr L)
         {
 			ObjectTranslator translator = ObjectTranslatorPool.Instance.Find(L);
 			System.Type type = typeof(UnityEngine.TextAsset);

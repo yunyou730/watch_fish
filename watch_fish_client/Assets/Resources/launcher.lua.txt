@@ -1,6 +1,71 @@
 print("This is launcher.lua.txt")
 
-require "main"
+local ELauncherPhase = {}
+ELauncherPhase.NONE         = 0 
+ELauncherPhase.LAUNCH       = 1
+ELauncherPhase.HOT_UPDATE   = 2
+ELauncherPhase.WAIT_ENTER   = 3
+ELauncherPhase.FINISH       = 4
+
+local kWaitKeepDuration     = 2
+
+local _current_phase = ELauncherPhase.NONE
+
+local _menu_entry = nil
+
+local function _Launch()
+    _current_phase = ELauncherPhase.LAUNCH
+    local _menu_enter_prefab = CS.watchfish.ResLoaderExt.LoadPrefab("menu/menu_entry.prefab")
+    _menu_entry = CS.UnityEngine.GameObject.Instantiate(_menu_enter_prefab)
+end
+
+local function _CheckHotUpdate()
+    print("_CheckHotUpdate")
+    return false
+end
+
+local function _HotUpdate(callback)
+    _current_phase = ELauncherPhase.HOT_UPDATE
+    callback()
+end
 
 
+local _wait_counter = 0
+local function _WaitEnter()
+    _current_phase = ELauncherPhase.WAIT_ENTER
+end
 
+local function _EnterGame()
+    _current_phase = ELauncherPhase.FINISH
+    CS.UnityEngine.GameObject.Destroy(_menu_entry)
+    _menu_entry = nil
+    require "main"
+end
+
+local function _main()
+    _Launch();
+    if _CheckHotUpdate() then
+        _HotUpdate(function()
+            _WaitEnter();
+        end)
+    else
+        _WaitEnter();
+    end
+end
+_main()
+
+function CSCall_LuaStart()
+    print("welcome to watchfish")
+end
+
+function CSCall_LuaUpdate(delta_time)
+    if _current_phase == ELauncherPhase.WAIT_ENTER then
+        _wait_counter = _wait_counter + delta_time
+        if _wait_counter >= kWaitKeepDuration then
+            _EnterGame()
+        end
+    end
+    if GameUpdate ~=  nil then
+        GameUpdate(delta_time)
+    end
+end
