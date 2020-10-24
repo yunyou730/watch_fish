@@ -15,7 +15,7 @@ end
 
 function CGame:_RegisterManagers()
     self.timer          = self:_AddManager(CMgrTimer.new())
-    
+    self.ui             = self:_AddManager(CMgrUI.new())
 end
 
 function CGame:_AddManager(mgr)
