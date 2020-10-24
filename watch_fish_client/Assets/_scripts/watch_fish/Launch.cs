@@ -23,7 +23,7 @@ namespace watchfish
 
         void Awake()
         {
-#if UnityEditor
+#if UNITY_EDITOR
             ResLoader.GetInstance().SimulateEnvInEditor(_shallSimulateEnvRes);
 #endif
         }
