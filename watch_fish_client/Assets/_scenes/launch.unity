@@ -407,7 +407,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _luaEntry: {fileID: 4900000, guid: 2185b2e24d6c7fd40a07c1cdb388434e, type: 3}
-  _shallSimulateEnvRes: 1
+  _shallSimulateEnvRes: 0
 --- !u!114 &1409007672
 MonoBehaviour:
   m_ObjectHideFlags: 0
