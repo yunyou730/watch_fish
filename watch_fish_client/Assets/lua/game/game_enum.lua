@@ -11,3 +11,7 @@ EMenuType.NONE              = 0
 EMenuType.LOGIN             = 1
 EMenuType.HOME              = 2
 
+---@class EGameEvent
+EGameEvent = {}
+EGameEvent.SHOW_MENU                = 1
+EGameEvent.START_LOGIN_WORKFLOW     = 2

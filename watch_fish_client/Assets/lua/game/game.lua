@@ -9,6 +9,7 @@ function CGame:ctor()
     
     self._mgrs              = {}
     self._mgrs_need_update  = {}
+    self._mgrs_need_init    = {}
 
     self:_RegisterManagers()
 end
@@ -16,6 +17,7 @@ end
 function CGame:_RegisterManagers()
     self.timer          = self:_AddManager(CMgrTimer.new())
     self.ui             = self:_AddManager(CMgrUI.new())
+    self.event          = self:_AddManager(CMgrEvent.new())
 end
 
 function CGame:_AddManager(mgr)
@@ -23,11 +25,20 @@ function CGame:_AddManager(mgr)
     if mgr.OnUpdate ~= nil then
         table.insert(self._mgrs_need_update,mgr)
     end
+    if mgr.Init ~= nil then
+        table.insert(self._mgrs_need_init,mgr)
+    end
     return mgr
 end
 
 function CGame:OnUpdate(delta_time)
     for i,mgr in ipairs(self._mgrs_need_update) do
         mgr:OnUpdate(delta_time)
+    end
+end
+
+function CGame:Init()
+    for i,mgr in ipairs(self._mgrs_need_init) do
+        mgr:Init()
     end
 end

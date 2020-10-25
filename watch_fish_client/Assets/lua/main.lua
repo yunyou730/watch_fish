@@ -13,3 +13,10 @@ require "game.game_const"
 require "game.game"
 
 g_game = CGame.new()
+g_game:Init()
+
+require "game.command.command_start_login_workflow"
+
+g_game.event:Dispatch(EGameEvent.START_LOGIN_WORKFLOW)
+
+
