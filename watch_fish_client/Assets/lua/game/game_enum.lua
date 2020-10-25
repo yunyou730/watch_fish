@@ -14,4 +14,5 @@ EMenuType.HOME              = 2
 ---@class EGameEvent
 EGameEvent = {}
 EGameEvent.SHOW_MENU                = 1
-EGameEvent.START_LOGIN_WORKFLOW     = 2
+EGameEvent.CLOSE_MENU               = 2
+EGameEvent.START_LOGIN_WORKFLOW     = 3

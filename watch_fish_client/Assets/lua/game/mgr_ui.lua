@@ -35,7 +35,10 @@ end
 ---@param menu_type EMenuType
 ---@param enter_arg table
 function CMgrUI:ShowMenu(menu_type,enter_arg)
-    print("[CMgrUI:ShowMenu]")
+    local _menu_instance = self._menu_type_map[menu_type]
+    if _menu_instance ~= nil and not _menu_instance:IsOpen() then
+        _menu_instance:EnterWithArg(enter_arg)
+    end
 end
 
 ---CloseMenu
