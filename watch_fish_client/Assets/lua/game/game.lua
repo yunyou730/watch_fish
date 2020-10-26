@@ -1,6 +1,7 @@
 require "game.mgr_timer"
 require "game.mgr_event"
 require "game.mgr_ui"
+require "game.mgr_keyboard_input"
 
 CGame = Core.declare_class()
 
@@ -18,6 +19,7 @@ function CGame:_RegisterManagers()
     self.timer          = self:_AddManager(CMgrTimer.new())
     self.ui             = self:_AddManager(CMgrUI.new())
     self.event          = self:_AddManager(CMgrEvent.new())
+    self.keyboard       = self:_AddManager(CMgrKeyboardInput.new())
 end
 
 function CGame:_AddManager(mgr)

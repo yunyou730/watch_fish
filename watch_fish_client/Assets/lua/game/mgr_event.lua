@@ -49,7 +49,7 @@ function CMgrEvent:Dispatch(evt,...)
             local _listener = self._listeners_map[listener_id]
             assert(_listener ~= nil)
             if _listener.caller ~= nil then
-                _listener.func(v.caller,...)
+                _listener.func(_listener.caller,...)
             else
                 _listener.func(...)
             end

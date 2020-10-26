@@ -10,5 +10,5 @@ function CMenuLogin:dtor()
 end
 
 function CMenuLogin:EnterWithArg(enter_arg)
-    self.__super.EnterWithArg(enter_arg)
+    self.__super.EnterWithArg(self,enter_arg)
 end

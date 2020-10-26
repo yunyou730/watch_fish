@@ -4,7 +4,7 @@ Core = {}
 function Core.declare_class(super_class)
     local _class = {}
     if super_class ~= nil then
-        setmetatable(_class,{_index = super_class})
+        setmetatable(_class,{__index = super_class})
         _class.__super = super_class
     end
 
