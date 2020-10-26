@@ -2,24 +2,17 @@
 CMgrKeyboardInput = Core.declare_class()
 
 local _care_keys_map = {
-    [CS.UnityEngine.KeyCode.F1] = function()
-        print("this is f1")
-    end,
-
-    [CS.UnityEngine.KeyCode.F2] = function()
-        print("this is f2")
-    end,
-    
-    [CS.UnityEngine.KeyCode.F3] = function()
-        print("this is f3")
-    end,    
+    [CS.UnityEngine.KeyCode.F1] = "debug.dbg_f1",
+    [CS.UnityEngine.KeyCode.F2] = "debug.dbg_f2",
+    [CS.UnityEngine.KeyCode.F3] = "debug.dbg_f3",
 }
 
 function CMgrKeyboardInput:OnUpdate()
     if CS.UnityEngine.Input.anyKey then
-        for key_code,func in pairs(_care_keys_map) do
+        for key_code,lua_file in pairs(_care_keys_map) do
             if CS.UnityEngine.Input.GetKeyDown(key_code) then
-               func()
+                package.loaded(lua_file)
+                require(lua_file)
             end
         end
     end

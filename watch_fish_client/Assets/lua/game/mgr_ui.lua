@@ -25,10 +25,12 @@ end
 
 function CMgrUI:_MapEvent()
     g_game.event:Register(EGameEvent.SHOW_MENU,self,self.ShowMenu)
+    g_game.event:Register(EGameEvent.CLOSE_MENU,self,self.CloseMenu)
 end
 
 function CMgrUI:_UnMapEvent()
     g_game.event:UnRegister(EGameEvent.SHOW_MENU,self,self.ShowMenu)
+    g_game.event:UnRegister(EGameEvent.CLOSE_MENU,self,self.CloseMenu)
 end
 
 ---ShowMenu
@@ -44,7 +46,10 @@ end
 ---CloseMenu
 ---@param menu_type EMenuType
 function CMgrUI:CloseMenu(menu_type)
-    print("[CMgrUI:CloseMenu]")
+    local _menu_instance = self._menu_type_map[menu_type]
+    if _menu_instance ~= nil and not _menu_instance:IsOpen() then
+        _menu_instance:Exit()
+    end
 end
 
 function CMgrUI:ShowPopup()
