@@ -1,0 +1,6 @@
+{
+	"name":"battle_field_1",
+	"prefab_path":"xxx.prefab",
+	"rows_cnt":30,
+	"cols_cnt":50
+}
