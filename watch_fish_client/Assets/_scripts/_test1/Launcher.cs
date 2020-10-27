@@ -56,6 +56,16 @@ namespace watchfish
             {
                 _luaUpdate();
             }
+
+            // UnityEngine.GUI.TextField txt ;
+            //gameObject.transform.fin
+            // Button button = null;
+            //    RectTransform rect;
+            // UnityEngine.UI.Text t = null;
+            // if(t != null)
+            // {
+            //     t.text = "xx";
+            // }
         }
 
 

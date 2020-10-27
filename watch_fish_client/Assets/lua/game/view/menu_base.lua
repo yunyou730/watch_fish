@@ -26,3 +26,7 @@ end
 function CMenuBase:IsOpen()
     return self._is_open
 end
+
+function CMenuBase:RootGO()
+    return self._root_go
+end

@@ -17,4 +17,6 @@ end
 function CMenuLogin:EnterWithArg(enter_arg)
     self.__super.EnterWithArg(self,enter_arg)
 
+    self._text_username = self:RootGO().transform:Find("txt_user_name")
+    self._text_username.gameObject:GetComponent("Text").text = "username"
 end
