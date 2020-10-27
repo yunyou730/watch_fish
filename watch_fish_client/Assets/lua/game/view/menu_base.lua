@@ -3,6 +3,7 @@ CMenuBase =  Core.declare_class()
 
 function CMenuBase:ctor()
     self._prefab_path   = nil
+    self._menu_type     = nil
     self._is_open       = false
     self._root_go       = nil
 end

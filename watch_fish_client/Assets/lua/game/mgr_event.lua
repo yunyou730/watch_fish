@@ -17,15 +17,6 @@ function CMgrEvent:Register(evt,caller,func)
     return _listener.id
 end
 
--- function CMgrEvent:UnRegister(listener_id)
---     local _listener = self._listeners_map[listener_id]
---     if _listener ~= nil then
---         local _evt = _listener.evt
---         self._event_call_map[evt][listener_id]  = nil
---         self._listeners_map[listener_id]        = nil
---     end
--- end
-
 function CMgrEvent:UnRegister(evt,caller,func)
     if self._event_call_map ~= nil and self._event_call_map[evt] ~= nil then
         local _to_remove_listener_id = nil

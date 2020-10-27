@@ -47,7 +47,7 @@ end
 ---@param menu_type EMenuType
 function CMgrUI:CloseMenu(menu_type)
     local _menu_instance = self._menu_type_map[menu_type]
-    if _menu_instance ~= nil and not _menu_instance:IsOpen() then
+    if _menu_instance ~= nil and _menu_instance:IsOpen() then
         _menu_instance:Exit()
     end
 end

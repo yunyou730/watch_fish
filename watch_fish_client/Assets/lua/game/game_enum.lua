@@ -16,3 +16,4 @@ EGameEvent = {}
 EGameEvent.SHOW_MENU                = 1
 EGameEvent.CLOSE_MENU               = 2
 EGameEvent.START_LOGIN_WORKFLOW     = 3
+EGameEvent.ENTER_HOME               = 4

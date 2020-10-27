@@ -15,7 +15,6 @@ namespace  watchfish
 #if UnityEditor
             GameObject go = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/_res/menu/menu_entry.prefab");
             go = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/_res/menu/menu_entry");
-            Debug.Log("xx");
 #endif
         }
 

@@ -49,11 +49,6 @@ namespace watchfish
             {
                 _luaUpdateFunc(Time.deltaTime);
             }
-
-            if(UnityEngine.Input.GetKeyDown(UnityEngine.KeyCode.F1))
-            {
-                Debug.Log("xx");
-            }
         }
 
         void OnDestroy()
