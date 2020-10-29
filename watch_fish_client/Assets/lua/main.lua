@@ -17,6 +17,7 @@ g_game:Init()
 
 require "game.command.command_start_login_workflow"
 require "game.command.command_enter_home"
+require "game.command.command_enter_battle"
 
 g_game.event:Dispatch(EGameEvent.START_LOGIN_WORKFLOW)
 

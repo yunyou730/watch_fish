@@ -5,16 +5,17 @@ function CMgrTimer:ctor()
     self._gen_id                = 0
     self._frame_timers          = {}
     self._time_timers           = {}
+    self._delta_time            = 0
 end
 
 function CMgrTimer:FrameOnce(delay,caller,func,...)
     local _new_timer = self:_GenTimer(false,delay,caller,func,...)
-    self._frame_handles[_new_timer.id] = _new_timer
+    self._frame_timers[_new_timer.id] = _new_timer
 end
 
 function CMgrTimer:FrameLoop(delay,caller,func,...)
     local _new_timer = self:_GenTimer(true,delay,caller,func,...)
-    self._frame_handles[_new_timer.id] = _new_timer
+    self._frame_timers[_new_timer.id] = _new_timer
 end
 
 function CMgrTimer:Once(delay,caller,func,...)
@@ -36,6 +37,10 @@ function CMgrTimer:Clear(timer)
     end
 end
 
+function CMgrTimer:DeltaTime()
+    return self._delta_time
+end
+
 function CMgrTimer:_GenTimer(is_loop,delay,caller,func,...)
     self._gen_id        = self._gen_id + 1
     local _timer        = {}
@@ -46,10 +51,12 @@ function CMgrTimer:_GenTimer(is_loop,delay,caller,func,...)
     _timer.delay        = delay
     _timer.elapsed      = 0
     _timer.disposed     = false
+    _timer.args         = table.pack(...)
     return _timer
 end
 
 function CMgrTimer:OnUpdate(delta_time)
+    self._delta_time = delta_time
     self:_UpdateTimers(self._frame_timers,1)
     self:_UpdateTimers(self._time_timers,delta_time)
 end
