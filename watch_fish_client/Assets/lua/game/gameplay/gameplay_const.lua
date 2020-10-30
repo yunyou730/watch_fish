@@ -6,3 +6,7 @@ gameplay_const.kFrameDuration       = 1/gameplay_const.kFrameRate
 
 gameplay_const.kRowCnt              = 100
 gameplay_const.kColCnt              = 80
+
+gameplay_const.kGfxOriginX             = 0
+gameplay_const.kGfxOriginY             = 0
+gameplay_const.kGfxTileSize            = 1

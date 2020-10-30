@@ -20,6 +20,7 @@ end
 
 function CGameplay:Start()
     self._world = CWorld.new()
+    self._world:Init()
     g_game.timer:FrameLoop(1,self,self._Update)
 end
 

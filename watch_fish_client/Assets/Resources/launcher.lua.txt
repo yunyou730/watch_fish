@@ -7,7 +7,7 @@ ELauncherPhase.HOT_UPDATE   = 2
 ELauncherPhase.WAIT_ENTER   = 3
 ELauncherPhase.FINISH       = 4
 
-local kWaitKeepDuration     = 2
+local kWaitKeepDuration     = 1
 
 local _current_phase = ELauncherPhase.NONE
 

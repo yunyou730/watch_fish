@@ -7,12 +7,14 @@ function CWorld:ctor()
 
     self._entity_map            = {}
     self._system_array          = {}
-    self._singleton_map         = {}
     self._group                 = {}
 end
 
 function CWorld:Init()
-
+    self.singleton_enter_arg = CSingletonEnterArg.new(self)
+    self.singleton_map       = CSingletonMap.new(50,30,nil)
+    
+    self:AddSystem(CSystemGfxGround.new(self))
 end
 
 function CWorld:Update(dt)
@@ -35,8 +37,4 @@ end
 
 function CWorld:AddSystem(system)
     table.insert(self._system_array,system)
-end
-
-function CWorld:AddSingleton(singleton)
-    
 end

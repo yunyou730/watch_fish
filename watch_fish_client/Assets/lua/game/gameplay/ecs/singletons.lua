@@ -11,21 +11,16 @@ function CSingletonEnterArg:Init()
 
 end
 
-
 ---@class CSingletonMap
 CSingletonMap = Core.declare_class()
 
-function CSingletonMap:ctor()
-    self.shall_create_ground_object     = false
-    self.rows_cnt                       = 0
-    self.cols_cnt                       = 0
+function CSingletonMap:ctor(rows_cnt,cols_cnt,terrain_map)
+    self.rows_cnt                   = rows_cnt
+    self.cols_cnt                   = cols_cnt
+    self.shall_create_ground_object = true
 
     -- 哪个格子上有什么东西 
     self.tile_map                       = {}
-end
-
-function CSingletonMap:Init(row_cnt,col_cnt,terrain_map)
-    
 end
 
 -- ---@class CSingletonUnitHolder
