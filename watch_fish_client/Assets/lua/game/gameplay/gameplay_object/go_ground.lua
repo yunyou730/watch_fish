@@ -8,6 +8,15 @@ function CGOGround:ctor()
     self._tile_go_map   = {}
 end
 
+function CGOGround:dtor()
+    for k,v in pairs(self._tile_go_map) do
+        CS.UnityEngine.GameObject.Destroy(v)
+    end
+    self._tile_go_map = nil
+    CS.UnityEngine.GameObject.Destroy(self._root_go)
+    self._root_go = nil
+end
+
 function CGOGround:Create(rows,cols,tile_set_map)
     self._root_go = CS.UnityEngine.GameObject()
     self._root_go.name = "[gameplay_root]"
@@ -31,6 +40,8 @@ end
 function CGOGround:_CreateOneTile(row,col)
     local _prefab = CS.watchfish.ResLoaderExt.LoadPrefab("grid_tile/grid_tile.prefab");
     local _tile_go = CS.UnityEngine.GameObject.Instantiate(_prefab)
+    _tile_go.transform.parent = self._root_go.transform
+    _tile_go.name = _tile_go.name .. " [" .. row .. "," .. col .. "]"
 
     -- tile color
     local _color_type = CS.watchfish.GridTile.ETileColor.Even

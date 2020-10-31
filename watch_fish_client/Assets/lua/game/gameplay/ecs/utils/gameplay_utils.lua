@@ -6,3 +6,7 @@ function gp_utils.GetCoordPos(row,col)
     local _y = (row - 1) * gameplay_const.kGfxTileSize + gameplay_const.kGfxOriginY
     return _x,_y
 end
+
+function gp_utils.CreateTank()
+
+end

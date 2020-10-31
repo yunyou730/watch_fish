@@ -1,7 +1,3 @@
-
--- ESingletonType      =   {}
-
-
 ECompType  = {}
 ECompType.PLAYER_CTRL           = 1
 ECompType.POSITION              = 2
@@ -12,3 +8,6 @@ ECompType.BLOCK                 = 5
 EBlockType = {}
 EBlockType.CONCRETE             = 1
 EBlockType.STEEL                = 2
+
+EUnitType = {}
+EUnitType.TANK                  = 1
