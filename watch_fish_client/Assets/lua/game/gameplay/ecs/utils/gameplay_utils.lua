@@ -7,6 +7,11 @@ function gp_utils.GetCoordPos(row,col)
     return _x,_y
 end
 
-function gp_utils.CreateTank()
-
+function gp_utils.CreateTank(world_spawn,row,col)
+    local _spawn_param = {
+        unit_type = EUnitType.TANK,
+        row = row,
+        col = col,
+    }
+    wrold_spawn:SpawnUnit(_spawn_param)
 end

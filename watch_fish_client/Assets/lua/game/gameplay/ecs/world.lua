@@ -11,17 +11,19 @@ function CWorld:ctor()
     self._group                 = {}
 end
 
-function CWorld:Init()
+function CWorld:Init(init_param)
     self._frame_index           = 0
     self._gen_entity_id_seed    = 0
 
-    self.singleton_enter_arg    = CSingletonEnterArg.new(self)
+    self.singleton_enter_arg    = CSingletonEnterArg.new(self,init_param)
     self.singleton_map          = CSingletonMap.new(50,30,nil)
     self.singleton_unit_spawn   = CSingletonUnitSpawn.new()
-
-    self:AddSystem(CSystemGfxGround.new(self))
+    self.singelton_gfx          = CSingletonGFX.new()
+    
     self:AddSystem(CSystemInitialize.new(self))
     self:AddSystem(CSystemUnitSpawn.new(self))
+    self:AddSystem(CSystemGfxGround.new(self))    
+    self:AddSystem(CSystemGfxUnit.new(self))
 end
 
 function CWorld:Update(dt)

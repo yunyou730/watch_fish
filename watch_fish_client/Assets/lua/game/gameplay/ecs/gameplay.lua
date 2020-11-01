@@ -20,7 +20,13 @@ end
 
 function CGameplay:Start()
     self._world = CWorld.new()
-    self._world:Init()
+    self._world:Init({
+        rows_cnt = 50,
+        cols_cnt = 40,
+        
+        spawn_row = 3,
+        spawn_col = 4,
+    })
     g_game.timer:FrameLoop(1,self,self._Update)
 end
 

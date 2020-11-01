@@ -10,3 +10,6 @@ gameplay_const.kColCnt              = 80
 gameplay_const.kGfxOriginX             = 0
 gameplay_const.kGfxOriginY             = 0
 gameplay_const.kGfxTileSize            = 1
+
+gameplay_const.kUnitTankOccupyRows      = 3
+gameplay_const.kUnitTankOccupyCols      = 3
