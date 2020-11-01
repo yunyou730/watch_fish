@@ -16,9 +16,9 @@ function CWorld:Init(init_param)
     self._gen_entity_id_seed    = 0
 
     self.singleton_enter_arg    = CSingletonEnterArg.new(self,init_param)
-    self.singleton_map          = CSingletonMap.new(50,30,nil)
+    self.singleton_map          = CSingletonMap.new(init_param)
     self.singleton_unit_spawn   = CSingletonUnitSpawn.new()
-    self.singelton_gfx          = CSingletonGFX.new()
+    self.singleton_gfx          = CSingletonGFX.new()
     
     self:AddSystem(CSystemInitialize.new(self))
     self:AddSystem(CSystemUnitSpawn.new(self))

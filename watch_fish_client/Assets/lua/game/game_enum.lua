@@ -18,3 +18,12 @@ EGameEvent.CLOSE_MENU               = 2
 EGameEvent.START_LOGIN_WORKFLOW     = 3
 EGameEvent.ENTER_HOME               = 4
 EGameEvent.ENTER_BATTLE             = 5
+
+
+---@class ETileAnchorType
+ETileAnchorType = {}
+ETileAnchorType.CENTER          = 1
+ETileAnchorType.LEFT_TOP        = 2
+ETileAnchorType.RIGHT_TOP       = 3
+ETileAnchorType.LEFT_DOWN       = 4
+ETileAnchorType.RIGHT_DOWN      = 5

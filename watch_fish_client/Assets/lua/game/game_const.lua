@@ -1,2 +1,6 @@
 
-const = {}
+game_const = {}
+
+
+
+

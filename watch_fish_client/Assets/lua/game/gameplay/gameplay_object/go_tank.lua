@@ -9,7 +9,7 @@ function CGOTank:ctor(row,col)
 end
 
 function CGOTank:dtor()
-
+    
 end
 
 function CGOTank:_Create()
