@@ -41,9 +41,10 @@ function CWorld:_Tick()
     end
 end
 
-function CWorld:AddEntity(entity)
+function CWorld:CreateEntity()
     self._gen_entity_id_seed                    = self._gen_entity_id_seed + 1
-    self._entity_map[self._gen_entity_id_seed]  = entity
+    local _entity = CEntity.new(self._gen_entity_id_seed)
+    return _entity
 end
 
 function CWorld:AddSystem(system)

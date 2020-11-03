@@ -11,6 +11,7 @@ require "game.gameplay.ecs.gameplay"
 require "game.gameplay.ecs.world"
 require "game.gameplay.ecs.singletons"
 require "game.gameplay.ecs.entity"
+require "game.gameplay.ecs.component"
 
 require "game.gameplay.ecs.system.system_base"
 require "game.gameplay.ecs.system.system_unit_spawn"
