@@ -4,7 +4,7 @@ require "game.gameplay.gameplay_const"
 
 -- game object 
 require "game.gameplay.gameplay_object.go_ground"
-require "game.gameplay.gameplay_object.go_tank"
+require "game.gameplay.gameplay_object.unit_tank"
 
 -- ecs
 require "game.gameplay.ecs.gameplay"

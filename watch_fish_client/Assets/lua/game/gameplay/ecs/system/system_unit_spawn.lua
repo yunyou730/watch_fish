@@ -18,7 +18,7 @@ end
 
 local _unit_spawn_func_map = {
     [EUnitType.TANK] = function(row,col)
-        
+        self._gfx:AddData(EUnitType.TANK,row,col)
     end
 }
 
